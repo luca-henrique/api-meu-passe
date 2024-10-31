@@ -20,6 +20,6 @@ export class User {
   @Column({ type: 'varchar' })
   password: string;
 
-  @Column({ type: 'varchar' })
-  refreshToken: string;
+  @Column({ type: 'varchar', nullable: true })
+  refreshToken?: string;
 }
