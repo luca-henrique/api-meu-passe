@@ -24,6 +24,9 @@ export class CreateUserDto {
   @IsEmail(null, { message: 'Please provide valid Email.' })
   email: string;
 
+  @IsNotEmpty()
+  refreshToken: string;
+
   @IsInt()
   age: number;
 

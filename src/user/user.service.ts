@@ -25,7 +25,11 @@ export class UserService {
     return this.userRepository.find();
   }
 
-  viewUser(id: number): Promise<User> {
+  findUserByCpf(cpf: string): Promise<User> {
+    return this.userRepository.findOne({ where: { cpf } });
+  }
+
+  findById(id: number): Promise<User> {
     return this.userRepository.findOneBy({ id });
   }
 
@@ -36,6 +40,7 @@ export class UserService {
     user.email = updateUserDto.email;
     user.password = updateUserDto.password;
     user.id = id;
+    user.refreshToken = updateUserDto.refreshToken;
     return this.userRepository.save(user);
   }
 
