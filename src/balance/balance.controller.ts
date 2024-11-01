@@ -25,6 +25,7 @@ export class BalanceController {
   debit(@Body() debitBalance: DebitProps) {
     console.log(debitBalance);
     const { type, cpf } = debitBalance;
-    return this.balanceService.debit(cpf, type);
+    // return this.balanceService.debit(cpf, type);
+    return JSON.stringify(debitBalance);
   }
 }
