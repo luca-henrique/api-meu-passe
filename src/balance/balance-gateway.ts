@@ -11,6 +11,7 @@ export class BalanceGateway {
 
   @SubscribeMessage('message')
   handleMessage(client: any, payload: any): void {
-    this.server.emit('message', payload); // Broadcast message to all connected clients
+    console.log(payload);
+    this.server.emit('message', payload);
   }
 }
